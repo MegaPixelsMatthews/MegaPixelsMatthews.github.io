@@ -7,8 +7,8 @@
 
 <canvas id="myChart"></canvas>
 <div style='text-align: center;'>
-    <h1> Chart Iteration One</h1>
-        <h2>For my chart I decided to pretend to analyze data about vaccine preferences (none of this data is real I made it all up) and show it in the format of a pie chart. I also messed around with the sizing and colors in order to draw people in more.<a href="wa72.html">The next graph.</a></h2>
+    <h1> Chart Iteration Two</h1>
+        <h2>This time around, I decided to add an animation and mess with the colors some more. I think having it slowly animate helps create interest.<a href="wa7.1.html">The previous graph.</a><a href="wa73.html">The next graph.</a></h2>
 <script>
 
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -26,15 +26,19 @@ var myChart = new Chart(ctx, {
                 '#F4453D',
             ],
             borderColor: [
-                '#F43DF4',
-                '#3D5CF4',
                 '#F4EE3D',
-                '#156622',
+                '#F4EE3D',
+                '#F4EE3D',
+                '#F4EE3D',
             ],
             borderWidth: 2
         }]
     },
   options: {
+    animation:{
+        duration: 1000,
+        easing:'easeInQuad'
+    },
     legend: {
       display: true,
       
