@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Megan Matthews Chart1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+
+<canvas id="myChart"></canvas>
+<script>
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Moderna', 'Pfizer', 'Johnson & Johnson', 'No Vaccine'],
+        datasets: [{
+            label: 'Which Covid Vaccine are people leaning towards getting?',
+            data: [35, 38, 21, 6],
+            backgroundColor: [
+                '#E8A65D',
+                '#C4F1B4',
+                '#B4F1EF',
+                '#F4453D',
+            ],
+            borderColor: [
+                '#F43DF4',
+                '#3D5CF4',
+                '#F4EE3D',
+                '#156622',
+            ],
+            borderWidth: 2
+        }]
+    },
+  options: {
+    legend: {
+      display: true,
+      
+      labels: { 
+        fontColor: "#242531",
+      }
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+</script>
