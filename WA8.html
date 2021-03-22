@@ -1,0 +1,100 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Police Arrests by Precinct</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+<body>
+<canvas id="myChart" width="400" height="100" aria-label="Hello ARIA World" role="img"></canvas>
+<div style='text-align: center;'>
+    <h1> Probability of Police Arrest by Precinct</h1>
+        <h2>Data Filtering and Aggregation</h2>
+            <p>In order to filter and aggregate my data, I used the starter code given to us and ran it in order to see the filter already set up. From there, I then used a for loop and some counters to calculate the average number of arrests for each precinct by dividing the number of arrests found in each precinct by the total number of arrests found overall. I then multiplied all of my findings by 100 in order to convert them into percentages and pretty printed them.
+
+        <h3>Data Analysis</h3>
+            <p>My findings show that there are certain precincts that have much higher arrest rates than other precincts. Some have a very low percentage of arrests (with one even having zero) while some have a comparativley high percentage of arrests, with the highest being at around 26%. This finding alone could potentially indicate that certain precincts are more likely to arrest you vs others, but I don't think this data alone would be enough to draw that sort of conclusion. Going off of this, my next inquiry would probably be where are all of the precincts located geographically? Perhaps the ones with higher arrest percentages live in more populated areas, or areas with higher crime rates. Another explanation could be perhaps if certain precincts had different duties than others, perhaps some precincts have more forces diverted towards investigation while others are for more pedestrian concerns. I'm not actually sure if that is how precincts work but it is worth looking in to. Overall, it was interesting to see all of the discrepancies between precicncts and I'm definitely driven to investigate more in order to bettwe understand how these arrest rates can fluctuate so wildly. </p></div>
+
+        <footer style='text-align: center;'><a href="https://github.com/MegaPixelsMatthews/MegaPixelsMatthews.github.io/blob/master/WA8Python.ipynb">Link to my data aggregation.</a></footer>
+<script>
+
+const data = {
+'111': 15.129151291512915,
+ '112': 23.952095808383234,
+ '113': 9.032258064516128,
+ '121': 17.889908256880734,
+ '122': 20.72538860103627,
+ '123': 16.883116883116884,
+ '211': 25.390625,
+ '212': 19.306930693069308,
+ '213': 13.609467455621301,
+ '221': 15.714285714285714,
+ '222': 12.121212121212121,
+ '223': 21.138211382113823,
+ '311': 16.666666666666664,
+ '312': 10.16042780748663,
+ '313': 7.857142857142857,
+ '314': 12.121212121212121,
+ '321': 11.320754716981133,
+ '322': 7.6923076923076925,
+ '323': 11.904761904761903,
+ '324': 5.0,
+ '411': 18.43003412969283,
+ '412': 15.862068965517242,
+ '421': 11.158798283261802,
+ '422': 8.771929824561402,
+ '423': 4.678362573099415,
+ '511': 9.090909090909092,
+ '512': 12.173913043478262,
+ '521': 12.560386473429952,
+ '522': 5.47945205479452,
+ '523': 9.090909090909092,
+ '611': 14.748201438848922,
+ '612': 24.71264367816092,
+ '621': 17.793594306049823,
+ '622': 19.35483870967742,
+ '623': 19.047619047619047,
+ '759': 0.0,
+ 'None': 13.855421686746988
+}
+
+const colors = Object.keys(data)
+.map(_ => `rgba(${[Math.random() * 255, Math.random() * 255, Math.random() * 255, 0.2].join(', ')})`)
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: Object.keys(data),
+        datasets: [{
+            label: 'probability of arrest by precinct',
+            data: Object.values(data),
+            backgroundColor: colors,     
+            borderColor: colors,
+            borderWidth: 2
+        }]
+    },
+
+  options: {
+    animation: {
+        duration: 300,
+    },
+    legend: {
+      display: true,
+      position: 'bottom',
+      labels: { 
+        fontColor: "#000000",
+      }
+    },
+    scales: {
+      xAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    },
+  }
+});
+
+</script>
+
+</body>
