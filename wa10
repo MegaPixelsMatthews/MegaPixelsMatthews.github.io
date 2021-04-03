@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Reveal.js Tutorial</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/blood.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>How to Use Reveal.js</h3>
+					<p style="color:#BF1313; font-weight:bold;">By: Megan Matthews</p>
+					<p style="color:#ED6D6D">INFO 3402</h5>
+				</section>
+				
+
+				<section>
+					<h3>What You Will Learn in this Presentation:</h3>
+					<ul>
+						<li>Making Vertical slides</li>
+						<li>Adding Slide numbers</li>
+						<li>Animating Text</li>
+						<li>Adding Images</li>
+					</ul>
+				</section>
+
+				<!-- Start of a vertical slide -->
+				<section>
+					<section>
+						<h3>Making Vertical Slides</h3>
+						<p><b>You can make vertical slides in your presentation deck with ease!</b></p>
+						<p>A good starting point is to <a href="https://revealjs.com/vertical-slides/">look at the vertical slide documentation</a><p>
+					</section>
+					<section>
+						<h3>First way to Implement Vertical Slides:</h3>
+						<p>As you can see, there is more than one way to implement vertical slides.The first way to accomlish this would be:</p>
+						<pre><code class="html" data-trim data-line-numbers=1,6|2,5|3|4><script type="text/template">
+							<section>Horizontal Slide</section>
+								<section>
+								  <section>Vertical Slide 1</section>
+								  <section>Vertical Slide 2</section>
+								</section>
+							</section>
+						</script></code></pre>
+					</section>
+					<section>
+						<h3>Second Vertical Slide Implementation</h3>
+						<p>The alternative way to do this woule be:</p>
+						<pre><code class="html" data-trim data-line-numbers=1,4|2|3><script type="text/template">
+							<section>
+								<section>Vertical Slide 1</section>
+								<section>Vertical Slide 2</section>
+							</section>
+						</script></code></pre>
+					</section>
+					<section>
+						<h3>Reasons for Creating Vertical Slides</h3>
+						<p>This type of slide layout can be very helpful for keeping proper linearity in your presentation without cramming too much onto one slide. Some examples of what you can use vertical slides for would be:</p>
+						<ul>
+							<ul>
+								<li>Adding additional explanations for the subject matter</li>
+								<li>Making a side-note that feels relevant</li>
+								<li>Adding a list of references</li>
+								<li>Breaking up a lengthy explanation into digestible parts</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+				<!-- End of a vertical slide -->
+				<section>
+					<h3>Adding Slide numbers is a breeze!</h3>
+					<ul>
+						<p>Add this option to the <code>Reveal.initialize</code> block</p>
+						<pre><code data-trim class="js" data-line-numbers=3>
+							Reveal.initialize({
+								hash: true,
+								slideNumber: 'c.v',
+						</code></pre>
+						<p>The <code>hash: true</code> lets you access slides by URL</p>
+					</ul>
+				</section>
+
+				<!-- Vertical slides for each topic -->
+				<section>
+					<section>
+						<h3>You Can Also Animate Code Blocks!</h3>
+						<p>Again, its helpful to look at the documentation for <a href="https://revealjs.com/code/">animating code blocks</a> to start with.</p>
+					</section>	
+					<section>
+						<h3>Code Necessary for Animation:</h3>
+						<pre><code data-trim class="html" data-line-numbers=1,5|2-4|2|3|4><script type="text/template">
+							<pre><code data-trim class="python" data-line-numbers=1,5|2-4|2|3|4>
+								def addition(a,b):
+						           sum = a + b
+					            return sum
+							</code></pre>
+						</script></pre></code>
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Adding Images</h3>
+						<p>We can also add images/gifs to our slide presentation like so:</p>
+						<img src="https://media.giphy.com/media/eCqFYAVjjDksg/giphy.gif">
+					</section>
+
+					<section>
+						<h3 >Adding Images</h3>
+						<p >This feature is fairly easy to implement!</p>
+						<p>Mainly all you have to use is an img tag and the url of the desired image, like this:</p>
+						<pre><code class="html" data-trim><script type="text/template">
+							<img>src="https://media.giphy.com/media/eCqFYAVjjDksg/giphy.gif">
+						</script></code></pre>
+					</section>
+
+					<section>
+						<h3>You can add all sorts of fun graphics this way!</h3>
+						<img src="https://i.kym-cdn.com/photos/images/newsfeed/001/018/866/e44.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 >The End</h3>
+						<p style="color:#BF1313";>Now you know how to make an amazing reveal.js presentation! You can successfully implement:</p>
+						<ul>
+							<li>Making Vertical slides</li>
+							<li>Adding Slide numbers</li>
+							<li>Animating Text</li>
+							<li>Adding Images</li>
+						</ul>
+						<p style="color:#BF1313">Congratulations!</p>
+					</section>
+
+					<section>
+						<h3>Applications</h3>
+						<p>With all of this newfound knowledge, you can make presentations that include dynamic code blocks, that flow seamlessly through your subject matter, and that can reference important imagery for your subject matter. I hope you spread your reveal.js wings and fly now.</p>
+						<span style='font-size:100px;'>&#128147;</span>
+						<span style='font-size:100px;'>&#128151;</span>
+						<span style='font-size:100px;'>&#128147;</span>
+					</section>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c.v',
+				math: {
+				      mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				      config: 'TeX-AMS_HTML-full',
+				      // pass other options into `MathJax.Hub.Config()`
+				      TeX: { Macros: { RR: "{\\bf R}" } }
+				    },
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealHighlight, RevealNotes, RevealMath ]
+			});
+		</script>
+	</body>
+</html>
