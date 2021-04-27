@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana;
+  padding: 20px;
+  background: gold;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  background: #B8860B;
+}
+
+.header h1 {
+  font-size: 40px;
+  color:white; 
+}
+
+.card {
+  background-color: #B8860B;
+  padding: 150px;
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 style="color: white">Weekly Assignment 13</h1>
+  <h2 style="color: black">Megan Matthews</h2>
+</div>
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Doge Coin's Environmental Impact</h2>
+
+      <p>In the past year or so, we have seen a huge spike in the interest and commodification of digital currencies. One of these currencies is an oddly named coin with a funny looking dog on it referred to as Doge Coin. Although the rise of many other digital currencies such as Bitcoin, Ethereum, and even Stellar was a gradual shift that many of us saw gaining traction in the past few years, the boom of success with this particular cryptocurrency was undoubtedly unexpected. Below, using a csv from <a href="https://finance.yahoo.com/quote/DOGE-USD/history?period1=1410825600&period2=1619395200&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true">this website,</a> I was able to create a visualization of the rapid success of Doge coin in order to better illustrate the aformentioned success.</p>
+
+
+<div id="vis1"></div>
+      <script type="text/javascript">
+        var spec = {
+
+           "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 1000,
+            "height": 400,
+            "data": {
+              "url": "https://raw.githubusercontent.com/cuinfoscience/INFO3402-Spring2021/main/Week16/DOGE-USD.csv"
+            },
+
+            "mark": "line",
+
+            "encoding": {
+              "x": {
+                  "field": "Date",
+                  "type": "temporal",
+                  "timeUnit": "monthyeardate"
+              },
+              "y": {
+                  "field": "Volume",
+                  "type": "quantitative",
+                  "aggregate": "mean"
+              },
+            },
+          };
+        /* JSON dump of your chart's spec */
+        var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+        vegaEmbed("#vis1", spec, opt);
+      </script>
+
+      
+      <p>The above visualization shows the average volume of the amount of Doge coins in circulation vs the time. As you can see, there was a barely indecipherable incline for doge coin starting around October of 2019. About a little over a year later, we see a huge spike in volume after October 2020 which continues to rise until it hits a dip in early 2021. Then around April of 2021 it has a huge spike and has continued to trend upwards until present day. I see the success of Doge Coin and other currencies as really taking off in the past year due to two main things. One would be the turning inward of society due to a global pandemic which in turn, has drawn more and more people into the digital world. Secondly, the rise of NFT art has put a huge amount of value behind cryptocurrencies and drawn in those that might otherwise have kept their wealth in the "real world". NFT stands for Non Fungible Token which is a new term used in the selling of digital artworks for exclusive ownership on the web. There has been a large amount of hype over this new world of art auctioneering due to the fact that many pieces can sell for thousands or even millions of dollars worth of cryptocurrency. The rise of Doge Coin itself though, is more than likely an offshoot of this hype, as doge coins weren't one of the main cryptocurrencies used before any of this began. Doge coin itself has more than likely seen success due to humanity's natural inclination to make humor out of the everyday things in life. One thing that the rise of Doge coin really reminds me of is the "Storm Area 51" facebook group event that got so much traction that large quantities of individuals did indeed end up showing up at the area. Doge Coin has become a joke thats humor has turned it into a success. Of course, having the golden child of crypto, Mr. Musk also give the coin its blessing could also be attributed to its unfathomable amount of success even just in the last few months.</p>
+     <br>
+     
+     
+
+      <p>The rise of cryptocurrencies, Doge or otherwise is a fascinating and uniquely puzzling ideology. The main purpose of cryptos creation was to give the power back to the people in allowing them to be able to control their money themselves, without having to rely on companies, banks, governments, etc. This philosophy is easily commendable and a moral compass that I hope individuals in our society continue to focus on. However, one of the main drawbacks to cryptocurrency is its environmental impact. Cryptocurrencies are made essentially by having huge rooms full of sophisticated computers run and try and unlock complex math equations on the blockchain. This requires a vast amount of energy consumption. as we are all aware by now, the global CO2 levels have been on a steady incline for a while now. This can mainly be attributed to the industrial revolution and the scourge of capitalism. Below, I visualized the past few years of global CO2 levels using <a href="https://github.com/vega/vega-datasets/blob/master/data/co2-concentration.csv">this dataset</a> in order to give you a better understanding of where we are at today.</p>
+      <br>
+
+      <div id="vis2"></div>
+      <script type="text/javascript">
+        var spec = {
+
+           "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+            "width": 1000,
+            "height": 200,
+            "data": {
+              "url": "https://vega.github.io/vega-datasets/data/co2-concentration.csv"
+            },
+
+            "encoding": {
+              "x": {
+                  "field": "Date",
+                  "type": "temporal",
+                  "timeUnit": "year",
+              },
+              "y": {
+                  "field": "adjusted CO2",
+                  "type": "quantitative"
+              }
+            },
+            "mark": "line"
+          };
+        /* JSON dump of your chart's spec */
+        var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+        vegaEmbed("#vis2", spec, opt);
+      </script>
+
+      <p>As you can see, our global CO2 levels have risen rapidly at this point, crossing the 400 mark just a few years ago. Despite their fruition being based in giving power to the people, crypto's are still a product of their environment. Due to this, with all of this mining occurring, there have been even higher amounts of energy consumption reported just due to these mining tactics alone. All the electricity consumed is coming from unsustainable energy practices such as natrual gas or coal. Due to this, it could be theorized that global CO2 levels could be pushed upwards by more and more people cashing in on cryptos such as Doge Coin and the like. Looking at this CO2 visualization, there doesnt appear to be a specific correlation between the huge spike we saw in the Doge Coin visualization and the steady rise of Global CO2 levels. More likely than not, even though crypto mining is terrible for the environment, it still just doesn't have as quite as large of an impact as other factors at play such as huge indistrialized societies, deforestation, etc. This could potentially change one day if Doge Coin and other cryptocurrencies continue to see the success they are seeing currently, but only time will tell. Due to these factors, it can not be concluded that the Doge Coin data has any significant relationship with the data shown in this CO2 example.</p>
+      
+      <p>With CO2 levels and Doge Coin's volume on the rise, the question arises of what our next steps should be as a society surrounding the treatment of our environment and the commodification of the digital world. The best solution that I could think of would be to put a huge amount of our time, money, and resources into creating more globally used sources of renewable energy. If all of the doge coins mined were mined using computers that ran off of solar or wind energy, then their negative impact on the environment would cease to exist. Not to mention we need to make some changes in our consumption regardless in order to not wipe ourselves off the face of the earth in a couple of years. Another good idea that I've seen implemented that could work for the meantime as we continue to switch to more sustainable energy practices would be to use large portions of the funds generated by cryptocurrencies to pay for research and implementation of creating sustainable energy and fixing the global CO2 levels. These two implementations would more than likely be our best hope in finding a solution to the problem at hand.</p>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
